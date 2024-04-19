@@ -12,4 +12,6 @@ cp -v .vimrc "${HOME}"
 
 # Add remaining dotfiles
 echo "Adding remaining dotfiles"
-cp -v .better-commits.json .zshrc "${HOME}"
+for dot in dots/.*; do
+  cp -v "${dot}" "${HOME}"
+done
