@@ -1,0 +1,89 @@
+{
+  "image":"mcr.microsoft.com/devcontainers/base:ubuntu",
+  "name": "sre-bitbucket",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "files.enableTrash": false,
+        "files.autoSave": "onWindowChange",
+        "terminal.integrated.fontFamily": "MesloLGS NF",
+        "window.title": "${dirty}${separator}${rootName}",
+        "terminal.integrated.shell.*": "zsh",
+        "terminal.integrated.defaultProfile.*": "zsh",
+        "terminal.integrated.profiles.*": {
+          "zsh": {
+            "path": "zsh"
+          }
+        }
+      },
+      "extensions": [
+        "-amazonwebservices.aws-toolkit-vscode",
+        "ms-azuretools.vscode-docker",
+        "atlassian.atlascode",
+        "marlon407.code-groovy",
+        "tamasfe.even-better-toml",
+        "eamodio.gitlens",
+        "golang.go",
+        "hashicorp.terraform",
+        "george-alisson.html-preview-vscode",
+        "ms-python.isort",
+        "ivory-lab.jenkinsfile-support",
+        "ms-kubernetes-tools.vscode-kubernetes-tools",
+        "ms-python.vscode-pylance",
+        "ms-python.python",
+        "ms-python.debugpy",
+        "sourcegraph.sourcegraph",
+        "tilt-dev.tiltfile",
+        "shardulm94.trailing-spaces",
+        "redhat.vscode-yaml",
+        "phil294.git-log--graph",
+        "timonwong.shellcheck"
+      ]
+    }
+  },
+  "remoteEnv": {
+    "GH_TOKEN": "${localEnv:GH_TOKEN}"
+  },
+  "containerEnv": {
+    "GH_TOKEN": "${localEnv:GH_TOKEN}",
+    "VISUAL": "${localEnv:VISUAL}"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": "true",
+      "configureZshAsDefaultShell": "true",
+      "installOhMyZsh": "true",
+      "upgradePackages": "true"
+    },
+    "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {
+      "version": "1.27"
+    },
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.12"
+    },
+    "ghcr.io/devcontainers-contrib/features/npm-package:1": {
+      "package": "better-commits"
+    },
+    "ghcr.io/devcontainers/features/terraform:1": {
+      "terragrunt": "none",
+      "tflint": "none"
+    },
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+      "moby": "false"
+    },
+    "ghcr.io/devcontainers-contrib/features/pre-commit:2": {},
+    "ghcr.io/devcontainers/features/aws-cli:1": {},
+    "ghcr.io/devcontainers/features/azure-cli:1": {},
+    "ghcr.io/rio/features/kustomize:1": {},
+    "ghcr.io/goldsam/dev-container-features/flux2:1": {},
+    "ghcr.io/joshuanianji/devcontainer-features/gcloud-cli-persistence:1": {},
+    "ghcr.io/guiyomh/features/vim": {},
+    "ghcr.io/devcontainers-contrib/features/packer-asdf:2": {}
+  },
+  "mounts": [
+   "source=${localEnv:HOME}/.aws,target=/home/vscode/.aws,type=bind,consistency=cached",
+   "source=${localEnv:HOME}/.azure,target=/home/vscode/.azure,type=bind,consistency=cached",
+   "source=${localEnv:HOME}/.config/gcloud,target=/home/vscode/.config/gcloud,type=bind,consistency=cached"
+  ],
+  "onCreateCommand": "sudo chsh -s /usr/bin/zsh vscode"
+}
