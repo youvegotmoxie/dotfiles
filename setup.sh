@@ -11,4 +11,5 @@ cp -v assets/wombat256.vim "${HOME}/.vim/colors"
 cp -v .vimrc "${HOME}"
 
 # Add remaining dotfiles
+echo "Adding remaining dotfiles"
 cp -v .better-commits.json .zshrc "${HOME}"
