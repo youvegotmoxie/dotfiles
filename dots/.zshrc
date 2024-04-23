@@ -5,6 +5,7 @@ zstyle ':omz:update' frequency 30
 plugins=(git vi-mode docker git-extras ubuntu terraform kubectl helm gcloud aws)
 source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
+alias bat="batcat"
 alias btcm="better-commits"
 alias ls="ls --color=auto"
 alias ll="ls -lah"
