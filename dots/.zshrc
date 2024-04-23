@@ -9,7 +9,6 @@ alias bat="batcat"
 alias btcm="better-commits"
 alias ls="ls --color=auto"
 alias ll="ls -lah"
-alias sudo="nocorrect sudo"
 alias k='kubectl'
 alias kgp='kubectl get pods'
 alias dive='docker run -it --rm  -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive'
