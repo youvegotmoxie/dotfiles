@@ -8,7 +8,6 @@ git clone https://github.com/VundleVim/Vundle.vim.git "${HOME}/.vim/bundle/Vundl
 # Configure vim
 echo "Configuring vim"
 cp -v assets/wombat256.vim "${HOME}/.vim/colors"
-cp -v .vimrc "${HOME}"
 
 # Add remaining dotfiles
 echo "Adding remaining dotfiles"
