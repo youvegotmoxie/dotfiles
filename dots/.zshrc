@@ -25,3 +25,17 @@ alias find='bfs'
 alias kubectl='kubecolor'
 alias cat='bat --paging=never --style=plain'
 alias grep="ugrep --color=auto"
+
+git-sendit () {
+  local branch="$(git branch --show-current)"
+  git add .
+  if [ ! -z "$1" ]
+  then
+    local msg="trivial"
+    git commit -m ${msg}
+  else
+    git commit
+  fi
+  git push origin "${branch}"
+}
+
