@@ -38,4 +38,3 @@ git-sendit () {
   fi
   git push origin "${branch}"
 }
-
