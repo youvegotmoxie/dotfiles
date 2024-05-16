@@ -25,7 +25,7 @@ alias find='bfs'
 alias kubectl='kubecolor'
 alias cat='bat --paging=never --style=plain'
 alias grep="ugrep --color=auto"
-alias gpm="git pull origin/master"
+alias gpm="git pull origin master"
 
 git-sendit () {
   local branch="$(git branch --show-current)"
